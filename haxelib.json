@@ -1,0 +1,11 @@
+{
+    "name": "hxgit",
+    "url": "https://github.com/bendmorris/hxgit",
+    "license": "MIT",
+    "tags": ["git"],
+    "description": "Add version info from Git to your Haxe project",
+    "version": "1.0.0",
+    "releasenote": "Initial release.",
+    "contributors": ["bendmorris"],
+    "dependencies": {}
+}
