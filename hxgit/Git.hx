@@ -9,8 +9,9 @@ import sys.io.Process;
 
 class Git
 {
-	macro static public function build(repoPath:String):Array<Field>
+	macro static public function build(?repoPath:String):Array<Field>
 	{
+		if (repoPath == null) repoPath = Sys.getCwd();
 		var process = new Process("git", ["-C", repoPath, "describe", "--always", "--tag"]);
 
 		var buffer = new BytesOutput();
@@ -33,7 +34,7 @@ class Git
 		}
 
 		process.close();
-		var output = buffer.getBytes().toString();
+		var output = StringTools.trim(buffer.getBytes().toString());
 
 		var fields:Array<Field> = Context.getBuildFields();
 
